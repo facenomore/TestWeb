@@ -29,7 +29,7 @@
         <property name="dataSource" ref="dataSource"/>
         <property name="annotatedClasses">
             <list>
-                <value>java.model.User</value>
+                <value>net.proselyte.bookmanager.model.Book</value>
             </list>
         </property>
         <property name="hibernateProperties">
@@ -41,16 +41,16 @@
         </property>
     </bean>
 
-    <!--UserDao and UserService beans-->
-    <bean id="userDao" class="net.facenomore.usermanager.dao.UserDaoImpl">
+    <!--BookDao and BookService beans-->
+    <bean id="bookDao" class="net.facenomore.usermanager.dao.UserDaoImpl">
         <property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory"/>
     </bean>
 
-    <bean id="userService" class="net.facenomore.usermanager.service.UserServiceImpl">
-        <property name="userDao" ref="userDao"/>
+    <bean id="bookService" class="net.facenomore.usermanager.service.UserServiceImpl">
+        <property name="userDao" ref="bookDao"/>
     </bean>
 
-    <context:component-scan base-package="java"/>
+    <context:component-scan base-package="net.facenomore.usermanager"/>
 
     <tx:annotation-driven transaction-manager="transactionManager"/>
 
