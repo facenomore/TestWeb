@@ -6,7 +6,7 @@
         http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
-    <context:component-scan base-package="net.facenomore"/>
+    <context:component-scan base-package="net.facenomore.usermanager"/>
 
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/WEB-INF/pages/"/>
@@ -42,11 +42,11 @@
     </bean>
 
     <!--UserDao and UserService beans-->
-    <bean id="userDao" class="dao.UserDaoImpl">
+    <bean id="userDao" class="net.facenomore.usermanager.dao.UserDaoImpl">
         <property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory"/>
     </bean>
 
-    <bean id="userService" class="service.UserServiceImpl">
+    <bean id="userService" class="net.facenomore.usermanager.service.UserServiceImpl">
         <property name="userDao" ref="userDao"/>
     </bean>
 
