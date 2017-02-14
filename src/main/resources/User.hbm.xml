@@ -4,7 +4,7 @@
         "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping>
-    <class name="net.facenomore.model.User" table="user">
+    <class name="net.facenomore.usermanager.model.User" table="user">
         <meta attribute="class-description">
             This class contains the employee detail.
         </meta>
